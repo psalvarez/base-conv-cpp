@@ -5,7 +5,7 @@
 #include "base_conv.hpp"
 using namespace std;
 
-//const int BASE = 27;
+const int BASE = 26;
 const int ASCII_OFFSET = 65;
 
 void translate(int number, string& chain) {
@@ -14,7 +14,7 @@ void translate(int number, string& chain) {
 
 string converter(int input) {
     string output;
-
-    translate(input, output);
+    int rem = input % BASE;
+    translate(rem, output);
     return output;
 }
