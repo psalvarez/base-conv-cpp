@@ -6,9 +6,10 @@
 using namespace std;
 
 //const int BASE = 27;
+const int ASCII_OFFSET = 65;
 
 void translate(int number, string& chain) {
-    chain += char(number);
+    chain += char(ASCII_OFFSET + number);
 }
 
 string converter(int input) {
@@ -17,8 +18,3 @@ string converter(int input) {
     translate(input, output);
     return output;
 }
-
-/*char converter(int input) {
-    input++;
-    return 'A';
-}*/
