@@ -3,6 +3,18 @@
 #include "base_conv.hpp"
 
 //Stage 3
+TEST_CASE("stage-4"){
+    //Decimal to two-letter format
+    REQUIRE(converter(1) == "A");
+    REQUIRE(converter(4) == "D");
+    REQUIRE(converter(26) == "Z");
+    REQUIRE(converter(27) == "AA");
+    REQUIRE(converter(30) == "AD");
+    REQUIRE(converter(52) == "AZ");
+    REQUIRE(converter(677) == "ZA");
+    REQUIRE(converter(702) == "ZZ");
+}
+
 TEST_CASE("Decimal-to-letter-ext"){
     REQUIRE(converter(0) == "A");
     REQUIRE(converter(3) == "D");
