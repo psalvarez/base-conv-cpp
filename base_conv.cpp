@@ -8,17 +8,19 @@ using namespace std;
 const int BASE = 26;
 const int ASCII_OFFSET = 65;
 
-void translate(int number, string& chain) {
+void addDigit(int number, string& chain) {
     chain = char(ASCII_OFFSET + number) + chain;
 }
 
 string converter(int input) {
     string output = "";
-    int rem = (input - 1) % BASE;
-    int res = (input - 1) / BASE;
-    translate(rem, output); //Add first character
+    int rem = 0;
+    int res = input;
 
-    if(res != 0)
-        translate(res - 1,output); //Add second character
+    do {
+        rem = (res - 1) % BASE; //Update remainder
+        res = (res - 1) / BASE; //Update cocient
+        addDigit(rem,output); //Add remainder to the chain
+    } while(res != 0); //While the cocient is not 0
     return output;
 }

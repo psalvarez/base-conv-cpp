@@ -2,8 +2,16 @@
 #include "catch.hpp"
 #include "base_conv.hpp"
 
-//Stage 3
-TEST_CASE("stage-4"){
+//Stage 5
+TEST_CASE("stage-5", "[nu]") {
+    REQUIRE(converter(4512) == "FQN");
+    REQUIRE(converter(2637) == "CWK");
+    REQUIRE(converter(17362) == "YQT");
+    REQUIRE(converter(84937) == "DUPU");
+}
+
+//Stage 4
+TEST_CASE("stage-4", "[nu]"){
     //Decimal to two-letter format
     REQUIRE(converter(1) == "A");
     REQUIRE(converter(4) == "D");
@@ -15,6 +23,7 @@ TEST_CASE("stage-4"){
     REQUIRE(converter(702) == "ZZ");
 }
 
+//Stage 3
 TEST_CASE("Decimal-to-letter-ext"){
     REQUIRE(converter(0) == "A");
     REQUIRE(converter(3) == "D");
